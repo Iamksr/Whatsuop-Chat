@@ -1,0 +1,27 @@
+// Place all the styles related to the Mychats controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.wpcf7-submit {
+    background-image: linear-gradient(to right,#ff00cc 0%,#333399 51%,#ff00cc 100%);
+    background-size: 200% auto;
+    color: #ffffff !important;
+    border-radius: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: uppercase;
+    border: none !important;
+    transition: 0.7s all;
+    -webkit-transition: 0.7s all;
+    margin-top: 10px;
+    padding-left: 60px;
+    padding-top: 10px; 
+    display: inline-block;
+    width: 192px;
+    height: 40px;
+}
+.wpcf7-submit:hover{
+    background-position: right center;
+
+}
+
+</style>

@@ -1,0 +1,13 @@
+<%= simple_form_for @room do |form| %>
+  <%= form.input :name %>
+  <%= form.submit "Save", class: 'btn btn-success' %>
+<%end%>
+<style type="text/css">
+	.input-group .form-control {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 67%;
+    margin-bottom: 0;
+}
+</style>

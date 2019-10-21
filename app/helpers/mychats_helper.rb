@@ -1,0 +1,2 @@
+module MychatsHelper
+end

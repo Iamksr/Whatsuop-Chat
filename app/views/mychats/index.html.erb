@@ -1,0 +1,56 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<p id="notice"><%= notice %></p>
+
+<h1>Mychats</h1>
+
+<table class="abc">
+  <thead>
+    <tr>
+      <th>Message</th>
+      <th>Username</th>
+      <th colspan=""></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mychats.each do |mychat| %>
+      <tr>
+        <td><%= mychat.message %></td>
+        <td><%= mychat.username %></td>
+        <td><%= link_to 'Show', mychat,class: "wpcf7-form-control wpcf7-submit" %></td>
+        <td><%= link_to 'Edit', edit_mychat_path(mychat),class: "wpcf7-form-control wpcf7-submit" %></td>
+        <td><%= link_to 'Destroy', mychat, method: :delete, data: { confirm: 'Are you sure?' },class: "wpcf7-form-control wpcf7-submit" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mychat', new_mychat_path,class: "wpcf7-form-control wpcf7-submit" %>
+<style type="text/css">
+  .wpcf7-submit {
+    background-image: linear-gradient(to right,#ff00cc 0%,#333399 51%,#ff00cc 100%);
+    background-size: 200% auto;
+    color: #ffffff !important;
+    border-radius: 25px;
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: uppercase;
+    border: none !important;
+    transition: 0.7s all;
+    -webkit-transition: 0.7s all;
+    margin-top: 6px;
+    padding-top: 10px;
+    display: inline-block;
+    width: 192px;
+    height: 40px;
+}
+.wpcf7-submit:hover{
+    background-position: right center;
+
+}
+
+</style>

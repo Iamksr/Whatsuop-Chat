@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Whatsaop</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+      <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <body>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<header>
+  <div class="container-fluid">
+    <div class="jumbotron hero">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-header">
+            <div class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="glyphicon glyphicon-menu-hamburger"></span>
+            </div>
+                <a class="navbar-brand" href="#"><strong>Whatsaop</strong></a>
+                </div>
+             <!------------  <User Sign in Noticed and Login as> -->  
+              <div id="navbar" class="collapse navbar-collapse navbar-bottom">
+              <% if user_signed_in? %>
+                Logged in as <strong><%= current_user.email %></strong>.
+                <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+              <% else %>
+                <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+                <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+              <% end %>
+          
+          </div>
+          <div id="navbar" class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="/mychats">MyChats</a></li>
+
+            </ul>
+      <hr class="hidden-sm hidden-md hidden-lg" style="margin: 0 30px;">
+          </div><!--/.nav-collapse -->
+        
+      </nav>
+      <div class="text-center hero-row">
+        <h1 class="heading"><span>What</span> Soap</h1>
+                <h2 class="subheading">Online Chatting App</h2>
+        <div class="btn-group">
+          <button class="btn btn-lg btnx-blue" type="button">Read more</button>
+          <button class="btn btn-lg btnx-white" type="button">Contact us</button>
+          </div>
+          <!-- ------------------<Form Tag in header> -------------->
+       <% if notice %>
+            <p class="alert alert-success"><%= notice %></p>
+        <% end %>
+                <% if alert %>
+                  <p class="alert alert-d
+                anger"><%= alert %></p>
+                <% end %>
+                    <%= yield %>
+        
+      </div>
+      <div class="row header-features text-center hero-row hero-bottom">
+        <div class="col-sm-6 col-md-4 col-lg-4">
+          <span class="glyphicon glyphicon-pencil"></span>
+          <div>
+            <h3>Web Design</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet pulvinar laoreet. Curabitur nec rhoncus sapien, congue pretium justo. Aenean erat risus, pulvinar et volutpat.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4">
+          <span class="glyphicon glyphicon-cloud"></span>
+          <div>
+            <h3>History</h3>
+            <p>The first online chat system was called Talkomatic, created by Doug Brown and David R. Woolley in 1973 on the PLATO System at the University of Illinoi</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4">
+          <span class="glyphicon glyphicon-link"></span>
+          <div>
+            <h3>About Us</h3>
+            <p>Bittern Technologies is a leading full-service website and software development company headquartered in Noida, India. Serving clients large and small worldwide since 2015.</p>
+             </div>
+             </div>
+        </div>
+ 
+          
+      </div>
+   
+  
+</header>
+
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
+  </body>
+</nav>
+</div>
+
+</html>
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+
+html, body {
+  background-color: #fcfcfc;
+  color: #131313;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+    font-weight: 700;
+}
+
+header, section, footer, aside, nav, main, article, figure {
+    display: block; 
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+.btnx-blue {
+    background-color: #2874A6;
+}
+
+.btnx-blue:hover,
+.btnx-blue:focus,
+.btnx-blue:active,
+.btnx-blue:visited {
+    background-color: #1F618D;
+    color: #fcfcfc;
+}
+
+.btnx-white {
+    background-color: #fcfcfc;
+    color: #131313;
+}
+
+.btnx-white:hover {
+    background-color: #D0D3D4;
+    color: #131313;
+}
+
+.btnx-white:hover,
+.btnx-white:focus,
+.btnx-white:active,
+.btnx-white:visited {
+    background-color: #D0D3D4;
+    color: #131313;
+}
+
+.navbar {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+.navbar-header > div > span {
+  font-size: 32px;
+  color: #fcfcfc;
+}
+
+.navbar-header > div > span:hover {
+  cursor: pointer;
+}
+
+.navbar-brand {
+  color: #fcfcfc;
+  font-size: 24px;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+  color: #2874A6;
+  font-size: 24px;
+}
+
+.navbar-nav a {
+  color: #fcfcfc;
+  font-size: 14px;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: transparent;
+  color: #2874A6;
+}
+
+.nav > li.active {
+  border-bottom: 3px solid #2874A6;
+}
+
+.nav > hr {
+    border: 2px solid #2874A6;
+}
+
+.jumbotron.hero {
+  color: #19fbdc;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: url(https://images.pexels.com/photos/726478/pexels-photo-726478.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: table;
+  border-radius: 0;
+}
+
+.jumbotron.hero .heading {
+  font-weight: 900;
+}
+
+.jumbotron.hero .heading > span {
+  color: #5499C7;
+}
+
+.jumbotron.hero .subheading {
+  font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+  color: #5499C7;
+}
+
+.header-features {
+  padding: 10px;
+}
+
+.header-features > div {
+  padding: 0 50px;
+}
+
+.header-features > div > div {
+  border-left: 1px solid #2874A6;
+  border-right: 1px solid #2874A6;
+}
+
+.header-features > div > span {
+  font-size: 32px;
+}
+
+.header-features p {
+  font-size: 14px;
+}
+
+.hero-row {
+  display: table-row;
+}
+
+.hero-row.hero-bottom {
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar-nav a {
+    font-size: 18px;
+    text-align: center;
+  }
+  .nav > li.active {
+    border-bottom: none;
+  }
+}
+</style>
+<script type="text/javascript">
+  window.sr = ScrollReveal();
+sr.reveal('.heading', {duration: 1000,
+                       origin: 'left',
+                       distance: '500px'
+                      });
+
+sr.reveal('.subheading', {duration: 1300,
+                          origin: 'right'
+                         });
+
+sr.reveal('.btn-group', {duration: 2000,
+                         origin: 'bottom',
+                         distance: '100px'
+                        });
+
+sr.reveal('.navbar', {duration: 1000,
+                      origin: 'top'
+                     });
+
+sr.reveal('.header-features', {duration: 3000,
+                               origin: 'bottom'
+                              });
+</script>
