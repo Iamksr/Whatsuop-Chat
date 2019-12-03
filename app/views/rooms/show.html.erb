@@ -71,4 +71,11 @@
     margin-top: 10px;
   }
 }
-</style>>
+</style>
+<script type="text/javascript">
+  $(function() {
+  $('#new_room_message').on('ajax:success', function(a, b,c ) {
+    $(this).find('input[type="text"]').val('');
+  });
+});
+</script>

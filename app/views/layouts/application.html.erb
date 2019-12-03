@@ -27,14 +27,7 @@
                 </div>
              <!------------  <User Sign in Noticed and Login as> -->  
               <div id="navbar" class="collapse navbar-collapse navbar-bottom">
-              <% if user_signed_in? %>
-                Logged in as <strong><%= current_user.email %></strong>.
-                <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-              <% else %>
-                <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-                <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-              <% end %>
+              
           
           </div>
           <div id="navbar" class="collapse navbar-collapse navbar-right">
@@ -115,7 +108,7 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato', Comic Sans MS;
     font-weight: 700;
 }
 
@@ -209,11 +202,11 @@ p {
 }
 
 .jumbotron.hero {
-  color: #19fbdc;
+  color: #000000;
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-image: url(https://images.pexels.com/photos/726478/pexels-photo-726478.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-image: url(https://wallpaperplay.com/walls/full/3/1/6/182535.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -277,13 +270,14 @@ p {
 </style>
 <script type="text/javascript">
   window.sr = ScrollReveal();
-sr.reveal('.heading', {duration: 1000,
+sr.reveal('.heading', {duration: 2000,
                        origin: 'left',
-                       distance: '500px'
+                       distance: '1000px'
                       });
 
-sr.reveal('.subheading', {duration: 1300,
-                          origin: 'right'
+sr.reveal('.subheading', {duration: 2000,
+                          origin: 'right',
+                          distance: '1000px'
                          });
 
 sr.reveal('.btn-group', {duration: 2000,
