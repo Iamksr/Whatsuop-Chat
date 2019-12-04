@@ -23,7 +23,7 @@
             <div class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="glyphicon glyphicon-menu-hamburger"></span>
             </div>
-                <a class="navbar-brand" href="#"><strong>Whatsaop</strong></a>
+                <a class="navbar-brand" href="#"><strong>MyDiscord.GG</strong></a>
                 </div>
              <!------------  <User Sign in Noticed and Login as> -->  
               <div id="navbar" class="collapse navbar-collapse navbar-bottom">
@@ -33,8 +33,12 @@
           <div id="navbar" class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
               <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
+               <li><a href="/mychats">MyChats</a></li>
+               <% if user_signed_in? %>
+              <li><a href="/users/sign_out">Log Out</a></li>
+              <%else%>
               <li><a href="/mychats">MyChats</a></li>
+              <% end %>
 
             </ul>
       <hr class="hidden-sm hidden-md hidden-lg" style="margin: 0 30px;">
@@ -42,11 +46,11 @@
         
       </nav>
       <div class="text-center hero-row">
-        <h1 class="heading"><span>What</span> Soap</h1>
-                <h2 class="subheading">Online Chatting App</h2>
+        <h1 class="heading"><span>My</span>Discord</h1>
+                <h2 class="subheading">Discord Nitro 2.0</h2>
         <div class="btn-group">
-          <button class="btn btn-lg btnx-blue" type="button">Read more</button>
-          <button class="btn btn-lg btnx-white" type="button">Contact us</button>
+          <a href="/conditions" button class="btn btn-lg btnx-blue" type="button">Read more T & C</a>
+          <a href="/rooms" button class="btn btn-lg btnx-white"  type="button">Custom Chats</a>
           </div>
           <!-- ------------------<Form Tag in header> -------------->
        <% if notice %>
@@ -63,8 +67,8 @@
         <div class="col-sm-6 col-md-4 col-lg-4">
           <span class="glyphicon glyphicon-pencil"></span>
           <div>
-            <h3>Web Design</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet pulvinar laoreet. Curabitur nec rhoncus sapien, congue pretium justo. Aenean erat risus, pulvinar et volutpat.</p>
+            <h3>Created By</h3>
+            <p>Manish Singh<br>Sec-44, Noida,Uttar Pradesh<br>Contact: 9170002122</p>
           </div>
         </div>
         <div class="col-sm-6 col-md-4 col-lg-4">

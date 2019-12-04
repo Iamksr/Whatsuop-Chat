@@ -1,0 +1,10 @@
+aws elb create-load-balancer-policy --load-balancer-name awseb-e-n-AWSEBLoa-1EXXOQG3BLVSG --policy-name my-ProxyProtocol-policy --policy-type-name ProxyProtocolPolicyType --policy-attributes AttributeName=ProxyProtocol,AttributeValue=true
+
+aws elb set-load-balancer-policies-for-backend-server --load-balancer-name awseb-e-n-AWSEBLoa-1EXXOQG3BLVSG --instance-port 80 --policy-names my-ProxyProtocol-policy my-existing-policy
+
+
+
+LB_NAME=awseb-e-n-AWSEBLoa-1EXXOQG3BLVSG
+aws elb create-load-balancer-policy --load-balancer-name $LB_NAME --policy-name GAFVProxyProtocolPolicy --policy-type-name ProxyProtocolPolicyType --policy-attributes AttributeName=ProxyProtocol,AttributeValue=true
+
+aws elb set-load-balancer-policies-for-backend-server --load-balancer-name $LB_NAME --instance-port 80 --policy-names GAFVProxyProtocolPolicy

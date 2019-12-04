@@ -24,7 +24,7 @@
 
                 <div class="text-right">
                   <small>
-                    <%= room_message.created_at %>
+                    <%= current_user.username%>
                   </small>
                 </div>
               </div>
@@ -54,11 +54,9 @@
 <style type="text/css">
   chat-message-container {
   padding: 5px;
-
   .avatar {
     margin: 5px;
   }
-
   .message-content {
     padding: 5px;
     border: 1px solid $primary;
@@ -66,16 +64,9 @@
     background: lighten($primary, 10%);
     color: $white;
   }
-
   & + .chat-message-container {
     margin-top: 10px;
   }
 }
-</style>
-<script type="text/javascript">
-  $(function() {
-  $('#new_room_message').on('ajax:success', function(a, b,c ) {
-    $(this).find('input[type="text"]').val('');
-  });
-});
-</script>
+
+</style>>

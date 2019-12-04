@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Term & Conditions</h1>
+
+<center>
+    <% @conditions.each do |condition| %> 
+        <%= condition.text %><br>
+    <% end %>
+</center>
+<br>
+<%= link_to 'New Condition', new_condition_path %>
