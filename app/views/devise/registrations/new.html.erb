@@ -22,9 +22,9 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <div class="field">
-  
-<%= f.file_field :avatars, multiple: true %>
+  <div class="field">  
+   <%= f.file_field :image, multiple: true %>
+  </div>
   <div class="actions">
     <%= f.submit "Sign up",class: "btn btn-success" %>
   </div>

@@ -33,14 +33,13 @@
         </div>
       <% end %>
     </div>
-
     <%= simple_form_for @room_message, remote: true do |form| %>
       <div class="input-group mb-3">
         <%= form.input :message, as: :string,
                                  wrapper: false,
                                  label: false,
                                  input_html: {
-                                   class: 'chat-input'
+                                   class: 'chat-input', required: true
                                  } %>
         <div class="input-group-append">
           <%= form.submit "Send", class: 'btn btn-primary chat-input' %>
@@ -52,21 +51,18 @@
   </div>
 </div>
 <style type="text/css">
-  chat-message-container {
-  padding: 5px;
-  .avatar {
-    margin: 5px;
-  }
-  .message-content {
-    padding: 5px;
-    border: 1px solid $primary;
-    border-radius: 5px;
-    background: lighten($primary, 10%);
-    color: $white;
-  }
-  & + .chat-message-container {
-    margin-top: 10px;
-  }
+  .chat {
+  background-color: green;
 }
 
-</style>>
+.chat-input {
+   border: 1px solid #c4c4c4;
+  clear: both;
+  overflow: hidden;
+}
+</style>
+<script type="text/javascript">
+  $(document).ready(function() {            
+    $('input').attr('required', true);   
+  });
+</script>

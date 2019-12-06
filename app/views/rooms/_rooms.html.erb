@@ -1,6 +1,8 @@
 <div class="mb-3">
+  <%if current_user.role == "admin"%>
   <%= link_to new_room_path, class: 'btn btn-primary' do %>
     Create a room
+  <% end %>
   <% end %>
 </div>
 
