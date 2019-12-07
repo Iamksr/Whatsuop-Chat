@@ -9,11 +9,16 @@
 
   <div class="col">
     <div class="chat">
+      <h2>Chats </h2>
       <% @room_messages.each do |room_message| %>
         <div class="chat-message-container">
           <div class="row no-gutters">
             <div class="col-auto text-center">
+              <% if room_message.user.image.present? %>
+              <%= image_tag room_message.user.image.url, class: "avatar" %>
+              <% else %>
               <img src="<%= gravatar_url(room_message.user) %>" class="avatar" alt="">
+              <% end %>
             </div>
 
             <div class="col">
@@ -27,7 +32,7 @@
                     <%= room_message.user.username %>
                   </small>
                 </div>
-              </div>
+              </div><br>
             </div>
           </div>
         </div>
@@ -52,11 +57,21 @@
 </div>
 <style type="text/css">
   .chat {
-  background-color: green;
+  background-color: transparent;
 }
+.message-content {
+    padding: 5px !important;
+    background: #D3D3D3 !important;
+    width: 98% !important;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+  .text-right{
+    background-color: #e082402e;
+  }
 
 .chat-input {
-   border: 1px solid #c4c4c4;
+ border: px solid #000000;
   clear: both;
   overflow: hidden;
 }

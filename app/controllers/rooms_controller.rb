@@ -22,7 +22,13 @@ class RoomsController < ApplicationController
       render :new
     end
    end
-
+   def destroy
+    @room.destroy
+    respond_to do |format|
+      format.html { redirect_to rooms_url, notice: 'Deleted' }
+      format.json { head :no_content }
+    end
+  end
   def edit
   end
 

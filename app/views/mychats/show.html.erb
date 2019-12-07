@@ -1,14 +1,52 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Message:</strong>
-  <%= @mychat.message %>
-</p>
+<table class="table table-striped">
+		<thead>
+<tr>
+  <th><strong>Message:</strong></th>
+  <th><strong>Username:</strong></th>
+</tr>
+</thead>
+<body>
+<tr>
+  <td><%= @mychat.message %></td>
+  <td><%= @mychat.username %></td>
+</tr>
+</body>
 
-<p>
-  <strong>Username:</strong>
-  <%= @mychat.username %>
-</p>
+<a href="/mychats/<%= @mychat.id%>/edit">
+<td><%= link_to 'Edit', edit_mychat_path(@mychat),class: "gradient-button gradient-button-3" %></td>
+<td><%= link_to 'Back', mychats_path,class: "gradient-button gradient-button-4"%></td>
+</table>
 
-<%= link_to 'Edit', edit_mychat_path(@mychat) %> |
-<%= link_to 'Back', mychats_path %>
+<style type="text/css">
+	.gradient-button {
+    margin: 0px;
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 10px;
+    padding: 9px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 100% auto;
+    color: #FFF;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    width: 100px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 35px;
+}
+.gradient-button:hover{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+      margin: 8px 10px 12px;
+}
+.gradient-button-3 {background-image: linear-gradient(to right, #7474BF 0%, #348AC7 51%, #7474BF 100%)}
+.gradient-button-3:hover { background-position: right center; 
+}
+.gradient-button-4 {background-image: linear-gradient(to right, #00d2ff 0%, #3a7bd5 51%, #00d2ff 100%)}
+.gradient-button-4:hover { background-position: right center; }
+
+</style>
