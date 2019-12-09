@@ -1,5 +1,18 @@
 <h1>
-  Creating a room  
+  New Custom room  
 </h1>
 
-<%= render partial: 'form' %>
+<center><%= render partial: 'form' %></center>
+<style type="text/css">
+	#room_name{
+    width: 400px;
+    border-right-width: unset;
+    background-color: transparent;
+    color: white;
+  }
+</style>
+<script type="text/javascript">
+  $(document).ready(function() {            
+    $('input').attr('required', true);   
+  });
+</script>

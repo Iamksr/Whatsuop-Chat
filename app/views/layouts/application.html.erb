@@ -23,7 +23,18 @@
             <div class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="glyphicon glyphicon-menu-hamburger"></span>
             </div>
-                <a class="navbar-brand" href="#"><strong>MyDiscord.GG</strong></a>
+                <% if current_user %>
+    <div class="dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <img class="avatar" src="<%= current_user.image %>">
+        <a class="navbar-brand" href="#"><strong> <%= current_user.username %></strong></a>
+      </a>
+
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+      </div>
+    </div>
+  <% end %>
                 </div>
              <!------------  <User Sign in Noticed and Login as> -->  
               <div id="navbar" class="collapse navbar-collapse navbar-bottom">
@@ -43,7 +54,8 @@
             </ul>
       <hr class="hidden-sm hidden-md hidden-lg" style="margin: 0 30px;">
           </div><!--/.nav-collapse -->
-        
+        <marquee behavior="scroll" direction="left">This website is under maintenance.Due to this you can face some problems, Our team is solving the bugs and issues!
+ :-)</marquee>
       </nav>
       <div class="text-center hero-row">
         <h1 class="heading"><span>My</span>Discord</h1>
@@ -51,6 +63,7 @@
         <div class="btn-group">
           <a href="/conditions" button class="btn btn-lg btnx-blue" type="button">Read more T & C</a>
           <a href="/rooms" button class="btn btn-lg btnx-white"  type="button">Custom Chats</a>
+          <a href="/users/edit" button class="btn btn-lg btnx-red"  type="button">Edit Profile</a>
           </div>
           <!-- ------------------<Form Tag in header> -------------->
        <% if notice %>
@@ -92,6 +105,7 @@
    
   
 </header>
+<span class="blinking">Am I blinking?</span>
 
 <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 
@@ -119,7 +133,34 @@ h1, h2, h3, h4, h5, h6 {
 header, section, footer, aside, nav, main, article, figure {
     display: block; 
 }
-
+..blinking{
+    animation:blinkingText 0.8s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #000;    }
+    49%{    color: transparent; }
+    50%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: #000;    }
+}.blinking{
+    animation:blinkingText 0.8s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #000;    }
+    49%{    color: transparent; }
+    50%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: #000;    }
+}blinking{
+    animation:blinkingText 0.8s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #000;    }
+    49%{    color: transparent; }
+    50%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: #000;    }
+}ss
 p {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
@@ -133,30 +174,11 @@ p {
 .btnx-blue {
     background-color: #2874A6;
 }
-
-.btnx-blue:hover,
-.btnx-blue:focus,
-.btnx-blue:active,
-.btnx-blue:visited {
-    background-color: #1F618D;
-    color: #fcfcfc;
+.btnx-red {
+    background-color: #F25F70;
 }
-
 .btnx-white {
     background-color: #fcfcfc;
-    color: #131313;
-}
-
-.btnx-white:hover {
-    background-color: #D0D3D4;
-    color: #131313;
-}
-
-.btnx-white:hover,
-.btnx-white:focus,
-.btnx-white:active,
-.btnx-white:visited {
-    background-color: #D0D3D4;
     color: #131313;
 }
 
@@ -223,13 +245,13 @@ p {
 }
 
 .jumbotron.hero .heading > span {
-  color: #5499C7;
+  color: #7410bd;
 }
 
 .jumbotron.hero .subheading {
   font-family: 'Open Sans', sans-serif;
     font-weight: 700;
-  color: #5499C7;
+  color: #000000;
 }
 
 .header-features {

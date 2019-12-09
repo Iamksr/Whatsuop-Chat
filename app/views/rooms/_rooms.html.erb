@@ -10,7 +10,9 @@
   <nav class="nav flex-column">
     <% @rooms.each do |room| %>
       <%= link_to room.name, room_path(room), class: 'nav-link room-nav-link' %>
+       <%if current_user.role == "admin"%>
      <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger" %></td>
+     <% end %>
     <% end %>
   </nav>
 <% else %>

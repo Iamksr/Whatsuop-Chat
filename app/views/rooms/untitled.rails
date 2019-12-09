@@ -9,16 +9,11 @@
 
   <div class="col">
     <div class="chat">
-      <h2>Chats </h2>
       <% @room_messages.each do |room_message| %>
         <div class="chat-message-container">
           <div class="row no-gutters">
             <div class="col-auto text-center">
-              <% if room_message.user.image.present? %>
-              <%= image_tag room_message.user.image.url, class: "avatar" %>
-             
-              
-              <% end %>
+              <img src="<%= gravatar_url(room_message.user) %>" class="avatar" alt="">
             </div>
 
             <div class="col">
@@ -55,29 +50,21 @@
     <% end %>
   </div>
 </div>
-<div class="d-none" data-role="message-template">
-  <div class="chat-message-container">
-    <div class="row no-gutters">
-      <div class="col-auto text-center">
-        <img src="" class="avatar" alt="" data-role="user-avatar">
-      </div>
+<style type="text/css">
+  .chat {
+  background-color: transparent;
+}
+.message-content {
+    padding: 5px !important;
+    background: purple !important;
+  }
 
-      <div class="col">
-        <div class="message-content">
-          <p class="mb-1" data-role="message-text">
-
-          </p>
-
-          <div class="text-right">
-            <small data-role="message-date">
-            </small>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
+.chat-input {
+   border: 1px solid #000000;
+  clear: both;
+  overflow: hidden;
+}
+</style>
 <script type="text/javascript">
   $(document).ready(function() {            
     $('input').attr('required', true);   
