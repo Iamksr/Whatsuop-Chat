@@ -32,6 +32,7 @@
 
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
         <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+        <%= link_to 'Edit Profile',  edit_user_registration_path,class: 'dropdown-item' %>
       </div>
     </div>
   <% end %>
@@ -63,7 +64,6 @@
         <div class="btn-group">
           <a href="/conditions" button class="btn btn-lg btnx-blue" type="button">Read more T & C</a>
           <a href="/rooms" button class="btn btn-lg btnx-white"  type="button">Custom Chats</a>
-          <a href="/users/edit" button class="btn btn-lg btnx-red"  type="button">Edit Profile</a>
           </div>
           <!-- ------------------<Form Tag in header> -------------->
        <% if notice %>
